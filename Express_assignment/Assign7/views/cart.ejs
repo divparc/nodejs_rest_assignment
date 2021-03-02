@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Cart</title>
+    </head>
+    <body>
+        <form method="POST" action="/items">
+            Id:<Input type="text" placeholder="Enter item Id" name="item[id]">
+            Name:<Input type="text" placeholder="Enter item name" name="item[name]">
+            Price:<input type="text" placeholder="Enter price of the product" name="item[price]">
+            <input type="submit" value="submit">
+        </form>
+        <form action="/items/:id">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <% data.forEach(function(item){%>
+            <tr>
+                <td> <%= item.id %> </td>
+                <td> <%= item.name %> </td>
+                <td> <%= item.price %> </td>
+            </tr>
+            <% })%>
+        </table>
+        </form>
+    </body>
+</html>
